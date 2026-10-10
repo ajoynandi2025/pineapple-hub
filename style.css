@@ -2,7 +2,6 @@
   --leaf: #1d4a2a;
   --leaf-dark: #12301b;
   --gold: #e9b82a;
-  --gold-soft: #f6e3a1;
   --bg: #f5f7ee;
   --ink: #1b2a1f;
   --muted: #55645a;
@@ -42,30 +41,46 @@ a { color: inherit; }
   border: 0; border-radius: 999px; padding: .15rem 1rem;
 }
 
-/* hero: diamond lattice like a pineapple's skin */
+/* FRONT PAGE: pineapple garden image.
+   Put your own photo at images/pineapple-garden.jpg and it will cover the
+   illustration automatically. */
 .hero {
+  min-height: 82vh; display: flex; align-items: flex-end;
+  padding: 2rem 1.25rem;
   background:
-    linear-gradient(135deg, transparent 46%, rgba(233,184,42,.35) 47% 53%, transparent 54%) 0 0 / 56px 56px,
-    linear-gradient(45deg, transparent 46%, rgba(233,184,42,.35) 47% 53%, transparent 54%) 0 0 / 56px 56px,
+    linear-gradient(to top, rgba(10,28,15,.88) 0%, rgba(10,28,15,.35) 55%, rgba(10,28,15,0) 100%),
+    url("images/pineapple-garden.jpg") center / cover no-repeat,
+    url("images/pineapple-garden.svg") center / cover no-repeat,
     var(--leaf);
-  color: #fff; padding: clamp(3rem, 9vw, 7rem) 1.25rem;
+  color: #fff;
 }
-.hero-text { max-width: 44rem; margin: 0 auto; background: rgba(18,48,27,.9); padding: 2rem; border-left: 8px solid var(--gold); }
-h1 { font-size: clamp(1.9rem, 5.5vw, 3.2rem); line-height: 1.2; margin: 0 0 1rem; }
-.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0 0; }
+.hero-text { max-width: 46rem; margin: 0 auto 1rem 0; width: 100%; }
+@media (min-width: 60rem) { .hero-text { margin-left: max(1.25rem, calc((100vw - 60rem) / 2)); } }
+h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.15; margin: 0 0 1rem; text-shadow: 0 2px 8px rgba(0,0,0,.4); }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.25rem 0 0; }
 .btn {
   display: inline-block; padding: .6rem 1.3rem; border: 2px solid var(--gold);
   color: #fff; text-decoration: none; font-weight: 500; border-radius: 4px;
 }
-.btn.gold { background: var(--gold); color: var(--leaf-dark); }
+.btn.gold, .btn.solid { background: var(--gold); color: var(--leaf-dark); }
 .btn:hover { filter: brightness(1.1); }
 
-section:not(.hero) { max-width: 52rem; margin: 0 auto; padding: 3rem 1.25rem 1rem; }
-h2 { font-size: 1.9rem; margin: 0 0 .75rem; color: var(--leaf); }
+section:not(.hero) { max-width: 52rem; margin: 0 auto; padding: 3.5rem 1.25rem 1rem; }
+.segment { border-bottom: 1px solid var(--line); padding-bottom: 3rem; }
+h2 { font-size: 2rem; margin: 0 0 .75rem; color: var(--leaf); line-height: 1.25; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) h2 { color: var(--gold); } }
-h3 { margin: 0 0 .25rem; }
+h3 { font-size: 1.35rem; margin: 2rem 0 .5rem; }
+h4 { margin: 0 0 .25rem; font-size: 1.1rem; }
 p { max-width: 42rem; }
 .note { color: var(--muted); font-size: .95rem; }
+
+figure { margin: 1.5rem 0; }
+figure img { width: 100%; height: auto; max-height: 28rem; object-fit: cover; display: block; border-radius: 4px; }
+figcaption { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+
+.steps { padding-left: 1.3rem; max-width: 44rem; }
+.steps li { margin-bottom: .9rem; padding-left: .3rem; }
+.steps li::marker { color: var(--leaf); font-weight: 700; }
 
 .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; margin: 1.5rem 0 0; }
 .facts div { border-top: 4px solid var(--gold); padding-top: .5rem; }
@@ -82,7 +97,6 @@ thead th { background: var(--leaf); color: #fff; }
 
 .contact { list-style: none; padding: 0; }
 .contact li { margin: .4rem 0; }
-.map iframe { width: 100%; height: 320px; border: 0; margin-top: 1rem; }
 
 footer { margin-top: 3rem; padding: 1.5rem; text-align: center; background: var(--leaf-dark); color: #fff; font-size: .95rem; }
 
