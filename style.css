@@ -101,3 +101,13 @@ thead th { background: var(--leaf); color: #fff; }
 footer { margin-top: 3rem; padding: 1.5rem; text-align: center; background: var(--leaf-dark); color: #fff; font-size: .95rem; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* About section */
+.timeline { list-style: none; padding: 0 0 0 1.2rem; border-left: 4px solid var(--gold); max-width: 44rem; }
+.timeline li { margin: 0 0 1rem; padding-left: .5rem; }
+blockquote { margin: 1rem 0; padding: .5rem 1.25rem; border-left: 4px solid var(--leaf); max-width: 42rem; }
+blockquote p { margin: .3rem 0; }
+blockquote footer { background: none; color: var(--muted); padding: 0; margin: 0; text-align: left; font-size: .95rem; }
+details { border-bottom: 1px solid var(--line); max-width: 44rem; padding: .6rem 0; }
+summary { cursor: pointer; font-weight: 500; }
+details p { margin: .5rem 0 .2rem; }
